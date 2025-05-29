@@ -1,0 +1,6 @@
+@BACKEND_georginio_troya_HostAddress = http://localhost:5048
+
+GET {{BACKEND_georginio_troya_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
