@@ -13,3 +13,5 @@ INSERT INTO "Deliveries" ("DeliveryId", "OrderId", "Type", "Status", "Departure"
 (1, 1, 'Express', 'En tránsito', '2025-05-28 12:00:00', '2025-05-28 18:00:00'),
 (2, 1, 'Normal', 'Entregado', '2025-05-28 09:00:00', '2025-05-28 13:30:00'),
 (3, 2, 'Urgente', 'En tránsito', '2025-05-28 11:30:00', '2025-05-28 15:00:00');
+TRUNCATE TABLE "Deliveries" RESTART IDENTITY CASCADE;
+
