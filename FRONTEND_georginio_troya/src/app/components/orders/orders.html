@@ -1,0 +1,67 @@
+<h2 style="text-align: center; margin: 24px 0;">📦 Lista de Órdenes</h2>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <mat-card *ngFor="let order of orders"
+            style="margin-bottom: 20px; width: 100%; max-width: 600px; padding: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    
+    <mat-card-title style="font-weight: 600; font-size: 18px; margin-bottom: 8px;">
+      Orden #{{ order.OrderId }} - {{ order.Customer?.Fname }} {{ order.Customer?.Lname }}
+    </mat-card-title>
+
+    <mat-card-content>
+<p *ngIf="order.OrderDate"><strong>📅 Fecha:</strong> {{ order.OrderDate | date:'longDate' }}</p>
+      <p><strong>⏰ Hora:</strong> {{ order.OrderTime }}</p>
+      <p><strong>🏠 Dirección:</strong> {{ order.Customer?.Address }}</p>
+      <p><strong>📞 Teléfono:</strong> {{ order.Customer?.Phone }}</p>
+      <p><strong>✉️ Email:</strong> {{ order.Customer?.Email }}</p>
+      <p><strong>🚚 Entregas:</strong> {{ order.Deliveries?.length }} entrega(s)</p>
+    </mat-card-content>
+  </mat-card>
+  
+
+  <hr style="margin: 40px 0;">
+<h3>Agregar envios</h3>
+
+<form (ngSubmit)="submitDelivery()" #deliveryForm="ngForm"
+      style="display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 500px; padding: 24px; border: 1px solid #ccc; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background-color: #fafafa;">
+
+  <h3 style="margin-bottom: 8px; text-align: center;">Agregar envio</h3>
+
+  <label style="display: flex; flex-direction: column;">
+    Customer ID:
+    <input [(ngModel)]="customerId" name="customerId" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <label style="display: flex; flex-direction: column;">
+    Order ID:
+    <input [(ngModel)]="orderId" name="orderId" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <label style="display: flex; flex-direction: column;">
+    Tipo:
+    <input [(ngModel)]="delivery.Type" name="type" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <label style="display: flex; flex-direction: column;">
+    Estado:
+    <input [(ngModel)]="delivery.Status" name="status" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <label style="display: flex; flex-direction: column;">
+    Salida:
+    <input type="datetime-local" [(ngModel)]="delivery.Departure" name="departure" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <label style="display: flex; flex-direction: column;">
+    Llegada:
+    <input type="datetime-local" [(ngModel)]="delivery.Arrival" name="arrival" required style="padding: 8px; border: 1px solid #ccc; border-radius: 8px;">
+  </label>
+
+  <button type="submit"
+          style="margin-top: 12px; padding: 10px 16px; background-color: #1976d2; color: white; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.2s;">
+    Guardar Entrega
+  </button>
+</form>
+
+
+</div>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BACKEND-georginio_troya")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+100c90b415268e0fe17830ac4fe4de77e310ebba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b51687033dc01d4342c0b80e05e9315620dae08a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BACKEND-georginio_troya")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BACKEND-georginio_troya")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
